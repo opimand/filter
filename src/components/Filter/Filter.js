@@ -52,7 +52,7 @@ class Filter extends Component {
                         <span className="selects__label">Фильтровать статьи по: </span>
 
 
-                        <select name="categoryChoose" id="categoryChoose" className="category">
+                        <select name="categoryChoose" id="categoryChoose" className="category" onClick={this.props.onSelectCategoryHandler}>
 
 
                             <option defaultValue='any'>Любой уровень</option>

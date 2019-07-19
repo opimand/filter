@@ -11,9 +11,13 @@ class App extends Component {
         super(props)
         this.state = {
             articlesData: null,
-            dataIs: null
+            dataIs: null,
+            selectCategory: null
         }
+
+        this.onSelectCategoryHandler = this.onSelectCategoryHandler.bind(this)
     }
+
 
     componentWillMount() {
         this.getMyData();
@@ -31,12 +35,21 @@ class App extends Component {
             });
     }
 
+    onSelectCategoryHandler = e => {
+        let selectCategory = e.target.value
+
+        this.setState({
+            selectCategory: selectCategory
+        })
+
+    }
 
     render() {
+        console.log(this.state.selectCategory)
         return (
             <div className="App">
 
-                <Filter  />
+                <Filter onSelectCategory={this.onSelectCategoryHandler}/>
                 <Articles data={this.state.data}/>
             </div>
         );
