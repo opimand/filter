@@ -1,6 +1,6 @@
 import React from 'react'
 import './Item.css'
-import img1 from '../../../image3.jpg'
+import img1 from '../../../cat.jpg'
 import img2 from '../../../maxresdefault.jpg'
 import video from '../../../you.jpg'
 
@@ -33,7 +33,7 @@ const Item = props => {
 
 )
     } else {
-        return <h1>Loading data</h1>
+        return <i className="fas fa-cog fa-spin"></i>
     }
 }
 

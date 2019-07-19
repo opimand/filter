@@ -10,8 +10,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            articlesData: null,
-            dataIs: null,
+
             selectCategory: null
         }
 
@@ -37,7 +36,7 @@ class App extends Component {
 
     onSelectCategoryHandler = e => {
         let selectCategory = e.target.value
-        console.log(selectCategory)
+
         this.setState({
             selectCategory: selectCategory
         })
@@ -45,7 +44,7 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.selectCategory)
+        console.log(this.state)
         return (
             <div className="App">
 

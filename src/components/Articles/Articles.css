@@ -30,7 +30,7 @@
 .articles__col img {
     width: 100%;
     max-height: 160px;
-    object-fit: contain;
+
 
 }
 .articles__col .title {
