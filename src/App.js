@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Filter from './components/Filter/Filter'
+import Articles from './components/Articles/Articles'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const dataUrl = 'https://api.myjson.com/bins/q59zd'
+
+class App extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            articlesData: null,
+            dataIs: null
+        }
+    }
+
+    componentWillMount() {
+        this.getMyData();
+
+    }
+
+    getMyData() {
+        fetch(dataUrl)
+            .then((response) => response.json())
+            .then((responseJson) => {
+                this.setState({data: responseJson, dataIs: true})
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+
+    render() {
+        return (
+            <div className="App">
+
+                <Filter  />
+                <Articles data={this.state.data}/>
+            </div>
+        );
+    }
 }
 
 export default App;

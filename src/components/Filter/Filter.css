@@ -1,0 +1,53 @@
+.Filter__wrap {
+    max-width: 650px;
+    width: 100%;
+    padding: 30px 20px;
+    margin: 0 auto;
+
+}
+
+.Filter__bg {
+    background-color: grey;
+}
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+
+}
+.search >   .fa-search {
+    position: absolute;
+    right: 12px;
+    top: 9px;
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+}
+.search label {
+    color: #fff;
+}
+
+
+.search input {
+    max-width: 400px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+
+}
+
+.selects {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.selects__label {
+    color: #fff;
+}
+
+.selects select {
+    height: 30px;
+
+}
