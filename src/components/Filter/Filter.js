@@ -11,6 +11,8 @@ class Filter extends Component {
             dataIs: false,
             data: []
         }
+
+
     }
 
     componentWillMount() {
@@ -28,6 +30,7 @@ class Filter extends Component {
                 console.error(error);
             });
     }
+
 
 
     render() {
@@ -52,7 +55,7 @@ class Filter extends Component {
                         <span className="selects__label">Фильтровать статьи по: </span>
 
 
-                        <select name="categoryChoose" id="categoryChoose" className="category" onClick={this.props.onSelectCategoryHandler}>
+                        <select name="categoryChoose" id="categoryChoose" className="category" onChange={this.props.onSelectCategoryHandler}>
 
 
                             <option defaultValue='any'>Любой уровень</option>

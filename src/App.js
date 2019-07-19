@@ -37,7 +37,7 @@ class App extends Component {
 
     onSelectCategoryHandler = e => {
         let selectCategory = e.target.value
-
+        console.log(selectCategory)
         this.setState({
             selectCategory: selectCategory
         })
