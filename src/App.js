@@ -47,7 +47,7 @@ class App extends Component {
         console.log(this.state)
         return (
             <div className="App">
-
+                    //Здесь был затык, не мог получить значение от селекта, что бы дальше фильтровать массив с данными
                 <Filter onSelectCategory={this.onSelectCategoryHandler}/>
                 <Articles data={this.state.data}/>
             </div>

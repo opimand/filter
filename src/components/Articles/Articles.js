@@ -7,30 +7,6 @@ import Item from '../Articles/Item/Item'
 class Articles extends Component {
 
 
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //         dataIs: false,
-    //         data: []
-    //     }
-    //
-    // }
-    //
-    // componentWillMount() {
-    //     this.getMyData();
-    //
-    // }
-    //
-    // getMyData() {
-    //     fetch(dataUrl)
-    //         .then((response) => response.json())
-    //         .then((responseJson) => {
-    //             this.setState({data: responseJson, dataIs: true})
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-    // }
 
 
     render() {
