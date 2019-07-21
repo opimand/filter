@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 import './Filter.css'
 
 
-
 class Filter extends Component {
     constructor() {
         super()
@@ -45,7 +44,7 @@ class Filter extends Component {
                             Поиск по ключевым словам:
                         </label>
 
-                        <input type="text" id='search'/>
+                        <input type="text" id='search' onChange={this.props.onSearchType}/>
                         <i className="fas fa-search"></i>
                     </div>
 
@@ -55,56 +54,62 @@ class Filter extends Component {
                         <span className="selects__label">Фильтровать статьи по: </span>
 
 
-                        <select name="categoryChoose" id="categoryChoose" className="category" onChange={this.props.onSelectCategoryHandler}>
+
+                            <select name="levelChoose" id="levelChoose" className="level" defaultValue={'any'} onChange={this.props.onSelectLevel}>
+
+                            <option value='any' key={'any'} disabled>Любой уровень</option>
+                                {this.state.dataIs ?
+                                    this.state.data.levels.map((level, id) => {
+                                        return <option key={level + id} value={level}>{level}</option>
+                                    })
+                                    : null
+                            }
 
 
-                            <option defaultValue='any'>Любой уровень</option>
+                        </select>
+
+                        <select name="categoryChoose" id="categoryChoose" className="category" onChange={this.props.onSelectCategory} defaultValue={'any'}>
+
+                            <option value="any" disabled>Все категории</option>
 
                             {this.state.dataIs ?
                                 this.state.data.categories.map((category, id) => {
                                     return <option key={category + id} value={category}>{category}</option>
                                 })
-                                : 'Data loading'
-                            }
-
-
-                        </select>
-
-
-                        <select name="levelChoose" id="levelChoose" className="level" defaultValue={'any'}>
-                            <option value="any">Все категории</option>
-
-                            {this.state.dataIs ?
-                                this.state.data.levels.map((level, id) => {
-                                    return <option key={level + id} value={level}>{level}</option>
-                                })
-                                : 'Data loading'
+                                : null
                             }
                         </select>
 
 
-                        <select name="languageChoose" id="languageChoose" className="language">
-                            <option value="any">Все языки</option>
+                        <select name="languageChoose" id="languageChoose" className="language" onChange={this.props.onSelectLanguage} defaultValue={'any'}>
+                            <option value="any" disabled>Все языки</option>
                             {this.state.dataIs ?
                                 this.state.data.languages.map((language, id) => {
                                     return <option key={language + id} value={language}>{language}</option>
                                 })
-                                : 'Data loading'
+                                : null
                             }
                         </select>
 
 
-                        <select name="videoChoose" id="videoChoose" className="video">
+                        <select name="videoChoose" id="videoChoose" className="video" onChange={this.props.videoIs}
+                                defaultValue={'any'}>
+                            <option value="any" disabled>Видео</option>
                             {this.state.dataIs ?
                                 this.state.data.videos.map((video) => {
-                                    return <option key={video + Math.random()}
+                                    return <option key={video}
+
                                                    value={video}> {video ? 'Есть видео' : 'Нет видео'} </option>
                                 })
-                                : 'Data loading'
+                                : null
                             }
 
 
                         </select>
+
+
+
+
                     </div>
                 </div>
             </div>
