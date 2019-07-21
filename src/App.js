@@ -10,8 +10,8 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
-            filteredArray: null
+            filteredArray: null,
+            showMore: false
 
         }
 
@@ -20,6 +20,7 @@ class App extends Component {
         this.onSelectLanguageHandler = this.onSelectLanguageHandler.bind(this)
         this.videoIsHandler = this.videoIsHandler.bind(this)
         this.onSelectLevelHandler = this.onSelectLevelHandler.bind(this)
+        this.onShowMoreHandler = this.onShowMoreHandler.bind(this)
     }
 
     componentWillMount() {
@@ -31,7 +32,7 @@ class App extends Component {
         fetch(dataUrl)
             .then((response) => response.json())
             .then((responseJson) => {
-                this.setState({data: responseJson})
+                this.setState({filteredArray: responseJson})
             })
             .catch((error) => {
                 console.error(error);
@@ -169,9 +170,20 @@ class App extends Component {
         }
     }
 
+    onShowMoreHandler() {
+
+
+        return this.setState({
+            showMore: !this.state.showMore
+        })
+
+
+    }
+
+
     render() {
-        console.log(this.state.data)
-        console.log(this.state.filteredArray)
+        console.log(this.state)
+
         return (
             <div className="App">
 
@@ -183,7 +195,9 @@ class App extends Component {
                     onSelectLevel={this.onSelectLevelHandler}
 
                 />
-                <Articles data={this.state.filteredArray}/>
+                <Articles
+                    showMore = {this.onShowMoreHandler}
+                    data={this.state.filteredArray ? (this.state.showMore ? this.state.filteredArray : this.state.filteredArray.slice(-3)) : []}/>
             </div>
         );
     }

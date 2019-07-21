@@ -25,6 +25,7 @@ class Articles extends Component {
                     <Item data={this.props.data} />
 
                 </div>
+                <button className='articles__btn' onClick={this.props.showMore}>Показать все</button>
 
             </div>
         )

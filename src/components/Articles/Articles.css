@@ -58,3 +58,24 @@
     text-align: left;
     padding: 0 10px;
 }
+
+.articles__btn {
+    width: 200px;
+    height: 30px;
+    background-color: #fff;
+    color: #0B235B;
+    border-radius: 25px;
+    border: 1px solid #0B235B;
+    outline: none;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+}
+
+.articles__btn:hover {
+    transition: all .4s ease-in-out;
+    background-color: #0B235B;
+    color: #fff;
+}
