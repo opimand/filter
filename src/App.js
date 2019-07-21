@@ -11,8 +11,8 @@ class App extends Component {
         super(props)
         this.state = {
 
-            filteredArray: null,
-            selectCategory: null
+            filteredArray: null
+
         }
 
         this.onSelectCategoryHandler = this.onSelectCategoryHandler.bind(this)
