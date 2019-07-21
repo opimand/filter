@@ -15,11 +15,8 @@ class App extends Component {
 
         }
 
-        this.onSelectCategoryHandler = this.onSelectCategoryHandler.bind(this)
-        this.onSearchTypeHandler = this.onSearchTypeHandler.bind(this)
-        this.onSelectLanguageHandler = this.onSelectLanguageHandler.bind(this)
-        this.videoIsHandler = this.videoIsHandler.bind(this)
-        this.onSelectLevelHandler = this.onSelectLevelHandler.bind(this)
+
+
         this.onShowMoreHandler = this.onShowMoreHandler.bind(this)
     }
 
@@ -173,7 +170,7 @@ class App extends Component {
     onShowMoreHandler() {
 
 
-        return this.setState({
+          this.setState({
             showMore: !this.state.showMore
         })
 
